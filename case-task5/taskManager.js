@@ -1,4 +1,3 @@
-// taskManager.js
 import TaskList from './taskList.js';
 import readline from 'readline';
 
@@ -24,39 +23,39 @@ const chooseOption = () => {
             case '1':
                 rl.question('Enter task description: ', (taskDescription) => {
                     taskList.addTask(taskDescription);
-                    chooseOption(); // Переходим к следующему запросу
+                    chooseOption(); 
                 });
                 break;
             case '2':
                 rl.question('Enter task index to remove: ', (index) => {
                     taskList.removeTask(parseInt(index) - 1);
-                    chooseOption(); // Переходим к следующему запросу
+                    chooseOption(); 
                 });
                 break;
             case '3':
-                taskList.showTasks(); // Отображаем задачи
-                chooseOption(); // Переходим к следующему запросу
+                taskList.showTasks(); 
+                chooseOption(); 
                 break;
             case '4':
                 rl.question('Enter task index to mark as completed: ', (index) => {
                     taskList.markTaskAsCompleted(parseInt(index) - 1);
-                    chooseOption(); // Переходим к следующему запросу
+                    chooseOption(); 
                 });
                 break;
             case '5':
-                taskList.showCompletedTasks(); // Отображаем выполненные задачи
-                chooseOption(); // Переходим к следующему запросу
+                taskList.showCompletedTasks(); 
+                chooseOption(); 
                 break;
             case '0':
-                rl.close(); // Закрываем интерфейс
+                rl.close(); 
                 break;
             default:
                 console.log('Invalid option!');
-                chooseOption(); // Переходим к следующему запросу
+                chooseOption(); 
         }
     });
 };
 
-// Запускаем меню
+
 menu();
 chooseOption();

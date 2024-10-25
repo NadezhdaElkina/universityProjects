@@ -1,4 +1,3 @@
-// taskList.js
 import Task from './task.js';
 
 class TaskList {
